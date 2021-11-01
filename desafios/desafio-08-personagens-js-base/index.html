@@ -45,7 +45,9 @@
         }];
 
         // 1.   Liste somente os personagens cuja editora seja Marvel;
-        console.log("Liste somente os personagens cuja editora seja Marvel")
+
+        console.log("Liste somente os personagens cuja editora seja Marvel (pré-ex.5)")
+
         let personagemMarvel = personagens.filter( (personagem) => {
             return personagem.editora === "Marvel"
         } )
@@ -53,26 +55,66 @@
         console.log(personagemMarvel)
 
         // 2.	Liste somente os personagem cuja data de Aparição seja superior a 1950;
-        console.log("Liste somente os personagem cuja data de Aparição seja superior a 1950")
+
+        console.log("Liste somente os personagem cuja data de Aparição seja superior a 1950 (pré-ex.5)")
+
         const personagem1950 = personagens.filter((personagem) => personagem.dataAparicao > 1950)
 
         console.log(personagem1950)
 
         // 3.	Some a idade de todos os personagens;
-        
+
+        console.log("Some a idade de todos os personagens (pré-ex.5)")
+
+        anoAtual = parseInt(new Date().getFullYear());
+
+        const todasIdades = personagens.map(p => anoAtual - p.dataAparicao).reduce((a, b) => a + b, 0)
+
+        console.log(todasIdades)
         
         // 4.	Traga somente os nomes dos personagens;
-        console.log("Traga somente os nomes dos personagens")
-        
+
+        console.log("Traga somente os nomes dos personagens (pré-ex.5)")
+
+        const nomes = personagens.map(p => p.nome);
+
+        console.log(nomes)
 
         // 5.	Adicione mais um personagem chamado Capitã Marvel, data de Aparição 1977 e editora Marvel;
-        //
+
+        console.log("Adicione mais um personagem chamado Capitã Marvel, data de Aparição 1977 e editora Marvel")
+
+        const addPersonagem = {
+            nome: "Capitã Marvel",
+            dataAparicao: 1977,
+            editora: "Marvel"
+        }
+
+        personagens.push(addPersonagem)
+        console.log(personagens)
 
         // 6. Mostre a quantidade de personagens da Marvel que possuem na lista
-        
+
+        console.log("Mostre a quantidade de personagens da Marvel que possuem na lista")
+
+        const PersonagensMarvel = (personagens.filter(p => p.editora === "Marvel"))
+
+        console.log(PersonagensMarvel.length)
 
         // 7. Mostre o nome e a idade dos personagens
-        // 
+        
+        console.log("Mostre o nome e a idade dos personagens")
+
+        const nomeIdade = personagens.map(p => {
+            const lista = {}
+
+            lista.nome = p.nome;
+            lista.idade = anoAtual - p.dataAparicao;
+            return lista
+        })
+
+        console.log(nomeIdade)
+        
     </script>
 
 </body>

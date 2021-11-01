@@ -63,21 +63,63 @@
         }];
 
         // 1.	Lista somente os times cujas vitórias seja maior ou igual que 20
+
         console.log("Lista somente os times cujas vitórias seja maior ou igual que 20")
 
-        let 
+        const vitorias20 = times.filter(t => (t.vitorias >= 20))
+
+        console.log(vitorias20)
 
         // 2.	Traga somente os nomes dos times;
-        //
+
+        console.log("Traga somente os nomes dos times")
+
+        const nomesTimes = times.map(t => (t.nome))
+
+        console.log(nomesTimes)
 
         // 3.	Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36;
-        //
+
+        console.log("Adicione mais um time chamado Wolves, vitorias 12, empates 8, derrotas 10, gols proprios 38, golscontras 36")
+         const addTime = {
+            nome : "Wolves",
+            vitorias: 12,
+            empates: 8,
+            derrotas: 10,
+            golsproprio: 38,
+            golscontra: 36
+         }
+
+         times.push(addTime)
+         console.log(times)
 
         // 4. Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time
-        //
+        
+        console.log("Mostre o nome e a quantidade de jogos(vitorias, empates e derrotas), quantidade de vitorias, empates e derrotas de um time")
+
+        const timesJogos = times.map(t =>{
+
+            const lista = {}
+
+            lista.nome = t.nome;
+            lista.qtdJogos = t.vitorias + t.empates + t.derrotas;
+            lista.vitorias = t.vitorias;
+            lista.empates = t.empates;
+            lista.derrotas = t.derrotas;
+
+            return lista
+        })
+
+        console.log(timesJogos)
 
         // 5.	Informe a quantidade de jogos do campeonato;
-        //
+
+        console.log("Informe a quantidade de jogos do campeonato")
+        
+        const qtdTJogos = times.map(t => t.empates + t.derrotas + t.vitorias).reduce((a, b) => a + b, 0)
+
+        console.log(qtdTJogos)
+
     </script>
 
 </body>

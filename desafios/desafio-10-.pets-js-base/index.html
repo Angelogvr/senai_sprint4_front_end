@@ -58,23 +58,59 @@
             }];
 
             // 1.	Liste somente os animais cujo tipo seja igual a gato;
-            //
+            
+            console.log("Liste somente os animais cujo tipo seja igual a gato")
+
+            const tipoGato = pets.filter(p => (p.tipoPet === "gato"))
+
+            console.log(tipoGato)
 
             // 2.	Liste somente os animais cuja idade seja superior a 7;
-            //
+            
+            console.log("Liste somente os animais cuja idade seja superior a 7")
+
+            const idadeMa7 = pets.filter(p => (p.idade > 7))
+
+            console.log(idadeMa7)
 
             // 3.	Some a idade de todos os pets;
-            //
+
+            console.log("Some a idade de todos os pets")
+
+            const todasIdades = pets.map(p => p.idade).reduce((a, b) => a + b, 0)
+
+            console.log(todasIdades)
             
             // 4.	Traga somente os nomes dos pets;
-            //
+            
+            console.log("Traga somente os nomes dos pets")
+
+            const nomesPet = pets.map(p => (p.nome))
+
+            console.log(nomesPet)
 
             // 5.	Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro;
-            console.log('-----------5-----------');
-            //
+
+            console.log("Adicione mais um pet chamado doguinho, cuja idade é igual a 13 e o tipo seja cachorro");
+
+            const addPet = {
+
+                nome: "doguinho",                
+                idade: 13,
+                tipoPet: "cachorro",
+
+            }
+
+            pets.push(addPet)
+            console.log(pets)
 
             // 6. Mostre a quantidade de cachorros que possuem na lista
-            //
+
+            console.log("Mostre a quantidade de cachorros que possuem na lista")
+
+            const qtdCachorro = pets.filter(p => (p.tipoPet === "cachorro"))
+
+            console.log(qtdCachorro.length)
 
     </script>
 
