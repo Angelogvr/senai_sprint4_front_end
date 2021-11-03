@@ -49,7 +49,7 @@ export default class Repositorios extends Component {
                     </section>
                     <section className="lista">
                         <h2>Lista de Repositorios</h2>
-                        <table id="lista">
+                        <table id="tabela-lista">
                             <thead>
                                 <tr>
                                     <th>Repositórios de {this.state.usuario}</th>
@@ -59,7 +59,7 @@ export default class Repositorios extends Component {
                                     <th>Criado em</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="tabela-lista-corpo">
                                 {
                                     this.state.listaRepositorios.map((Repositorio) => {
                                         return (
